@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="la3-Dk-u8k"/>
+                        <viewControllerLayoutGuide type="bottom" id="2oj-Xi-Tnl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnh-To-uH7">
+                                <rect key="frame" x="212" y="83" width="68" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="G3g-nf-Ec3"/>
+                                    <constraint firstAttribute="width" constant="68" id="PkI-oI-rjB"/>
+                                </constraints>
+                                <state key="normal" title="Go!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitText:" destination="2" eventType="touchUpInside" id="g7f-he-MNe"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqL-Ta-58o">
+                                <rect key="frame" x="20" y="92" width="171" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="36o-kW-uhy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="IS7-3U-r3D"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iZD-wG-BFL">
+                                <rect key="frame" x="20" y="143" width="280" height="337"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="nzY-6r-Xlx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="0Hg-iQ-G76"/>
+                                    <outlet property="delegate" destination="2" id="Qpi-5V-Pwq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bnh-To-uH7" firstAttribute="centerY" secondItem="jqL-Ta-58o" secondAttribute="centerY" id="Lsc-jg-wiw"/>
+                            <constraint firstItem="jqL-Ta-58o" firstAttribute="baseline" secondItem="Bnh-To-uH7" secondAttribute="baseline" id="gDg-ff-seG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="oTableView" destination="iZD-wG-BFL" id="chg-zu-9LF"/>
+                        <outlet property="oTextField" destination="jqL-Ta-58o" id="VdC-WY-2np"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="-69"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
